@@ -15,8 +15,10 @@
 
     <body>
         <div class="page-header">
-            <p class="admin_href"><a href="/admin/">Admin</a></p>
-            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <p class="admin_href"><a href="/admin/" style="color: white;">Admin</a></p>
+            {% if user.is_authenticated %}
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            {% endif %}
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
         <div class="content container">
